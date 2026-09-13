@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LibraryAPI.Migrations
 {
     [DbContext(typeof(LibraryContext))]
-    [Migration("20260906141005_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20260913164149_AddStorageLocation")]
+    partial class AddStorageLocation
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,6 +89,10 @@ namespace LibraryAPI.Migrations
                     b.Property<decimal>("PurchasePrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("StorageLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -108,6 +112,7 @@ namespace LibraryAPI.Migrations
                             InternalNotes = "Супер популярна книга, замовляти більше привезень.",
                             PublishedYear = 1949,
                             PurchasePrice = 150.00m,
+                            StorageLocation = "",
                             Title = "1984"
                         },
                         new
@@ -118,6 +123,7 @@ namespace LibraryAPI.Migrations
                             InternalNotes = "Має пошкодження обкладинки на складі №2.",
                             PublishedYear = 1932,
                             PurchasePrice = 150.00m,
+                            StorageLocation = "",
                             Title = "Великий Гетсбі"
                         });
                 });

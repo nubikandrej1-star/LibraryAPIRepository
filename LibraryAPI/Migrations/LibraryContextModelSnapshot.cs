@@ -86,6 +86,10 @@ namespace LibraryAPI.Migrations
                     b.Property<decimal>("PurchasePrice")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<string>("StorageLocation")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -105,6 +109,7 @@ namespace LibraryAPI.Migrations
                             InternalNotes = "Супер популярна книга, замовляти більше привезень.",
                             PublishedYear = 1949,
                             PurchasePrice = 150.00m,
+                            StorageLocation = "",
                             Title = "1984"
                         },
                         new
@@ -115,6 +120,7 @@ namespace LibraryAPI.Migrations
                             InternalNotes = "Має пошкодження обкладинки на складі №2.",
                             PublishedYear = 1932,
                             PurchasePrice = 150.00m,
+                            StorageLocation = "",
                             Title = "Великий Гетсбі"
                         });
                 });

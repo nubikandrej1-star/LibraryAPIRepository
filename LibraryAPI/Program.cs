@@ -15,6 +15,7 @@ builder.Services.AddDbContext<LibraryContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 builder.Services.AddScoped<BookRepository>(); //BookRepository
+builder.Services.AddScoped<AuthorRepository>(); //AuthorRepository
 
 builder.Services.AddAutoMapper(cfg => { }, typeof(Program));
 

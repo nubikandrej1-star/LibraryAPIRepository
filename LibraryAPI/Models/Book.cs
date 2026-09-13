@@ -14,6 +14,7 @@ namespace LibraryAPI.Models
         // Чутливі дані, які мають бути приховані від читачів
         public decimal PurchasePrice { get; set; }
         public string InternalNotes { get; set; } = string.Empty;
+        public string StorageLocation { get; set; } = string.Empty;
     }
 
     public enum BookGenre

@@ -17,7 +17,5 @@ public class BookProfile : Profile
         // 2. Напрямок: CreateBookRequest -> Book (для створення/оновлення книги)
         CreateMap<CreateBookRequest, Book>()
             .ForMember(book => book.AuthorId, opt => opt.MapFrom(request => request.AuthorId));
-
-        CreateMap<CreateAuthorRequest, Author>();
     }
 }
